@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Google Kustom Saya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Mulai dari atas */
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 50px; /* Ruang di atas */
+            background-color: #f2f2f2;
+            color: #202124;
+            box-sizing: border-box; /* Pastikan padding tidak menambah ukuran */
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .my-logo {
+            margin-bottom: 20px;
+        }
+
+        .my-logo img {
+            max-width: 280px; /* Ukuran logo yang sedikit lebih besar */
+            height: auto;
+            display: block; /* Agar img tidak punya ruang kosong di bawahnya */
+            margin: 0 auto; /* Tengah logo */
+            border-radius: 30%;
+        }
+
+        .my-description {
+            font-size: 1.2em;
+            color: #5f6368;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+
+        /* Styling for the Google Custom Search element */
+        .gcse-search {
+            width: 100%;
+            max-width: 800px; /* Lebar maksimal area pencarian dan hasil */
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        /* Menyesuaikan input box CSE */
+        .gsc-control-cse .gsc-search-box .gsc-input-box {
+            border: 1px solid #dfe1e5 !important;
+            border-radius: 24px !important;
+            height: 48px !important; /* Tinggi input yang sedikit lebih besar */
+            box-shadow: none !important;
+            transition: box-shadow 0.3s ease-in-out !important;
+        }
+
+        .gsc-control-cse .gsc-search-box .gsc-input-box:hover {
+            box-shadow: 0 1px 6px rgba(32,33,36,.28) !important;
+            border-color: rgba(223,225,229,0) !important;
+        }
+
+        /* Menyesuaikan tombol pencarian CSE */
+        .gsc-control-cse .gsc-search-button {
+            background-color: #4285f4 !important; /* Warna biru Google */
+            border: none !important;
+            border-radius: 24px !important;
+            color: #fff !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            padding: 0 20px !important;
+            height: 48px !important;
+            cursor: pointer !important;
+            margin-left: 10px !important;
+            transition: background-color 0.3s ease !important;
+        }
+
+        .gsc-control-cse .gsc-search-button:hover {
+            background-color: #347eff !important;
+        }
+
+        /* Menyesuaikan tampilan hasil pencarian */
+        .gsc-control-cse .gsc-results {
+            margin-top: 30px !important; /* Jarak antara kotak pencarian dan hasil */
+        }
+
+        .powered-by {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #70757a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px; /* Agar tidak terlalu mepet ke bawah */
+        }
+
+        .powered-by img {
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-section {
+                margin-bottom: 30px;
+            }
+            .my-logo img {
+                max-width: 200px;
+            }
+            .my-description {
+                font-size: 1em;
+            }
+            .gcse-search {
+                padding: 20px;
+            }
+            body {
+                padding-top: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .my-logo img {
+                max-width: 150px;
+            }
+            .gcse-search {
+                padding: 15px;
+            }
+            .gsc-control-cse .gsc-input-box,
+            .gsc-control-cse .gsc-search-button {
+                height: 40px !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="my-logo">
+            <img src="logo.jpg" alt="Logo Pencarian">
+        </div>
+        <p class="my-description">
+            Temukan informasi yang Anda cari dengan cepat, didukung oleh mesin pencari Google.
+        </p>
+    </div>
+
+    <div class="gcse-search"></div>
+
+    <div class="powered-by">
+        Ditenagai oleh
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" alt="Google">
+    </div>
+
+    <script async src="https://cse.google.com/cse.js?cx=62e574ada2a44435e"></script>
+
+</body>
+</html>
